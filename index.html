@@ -22,6 +22,12 @@
   <link rel="stylesheet" href="styles/styles.css">
 
   <meta name="google-site-verification" content="1KKToW3rMsJ7faao4EmKmBZC1pPF5o63NQyIQNhJXg0" />
+
+  <div class="lang-switch">
+    <button id="btn-it" class="active">IT</button>
+    <button id="btn-en">EN</button>
+  </div>
+
 </head>
 
 
@@ -52,7 +58,8 @@
         <li class="aboutNav">
           <a href="#about" class="navItem">
             <i class="lni lni-user"></i>
-            <span class="navItemName">ABOUT</span>
+            <span class="navItemName" data-lang="en">ABOUT</span>
+            <span class="navItemName" data-lang="it">SU DI ME</span>
           </a>
         </li>
         <li class="skillsNav">
@@ -63,20 +70,23 @@
         </li>
         <li class="worksNav">
           <a href="#projects" class="navItem">
-            <i class="lni lni-briefcase"></i>
-            <span class="navItemName">CAREER</span>
+            <i class="lni lni-briefcase-2"></i>
+            <span class="navItemName" data-lang="en">CAREER</span>
+            <span class="navItemName" data-lang="it">ESPERIENZE</span>
           </a>
         </li>
         <li class="worksNav">
           <a href="#works" class="navItem">
             <i class="lni lni-monitor-code"></i>
-            <span class="navItemName">PROJECTS</span>
+            <span class="navItemName" data-lang="en">PROJECTS</span>
+            <span class="navItemName" data-lang="it">PROGETTI</span>
           </a>
         </li>
         <li class="contactNav">
           <a href="#contact" class="navItem">
             <i class="lni lni-phone"></i>
-            <span class="navItemName">CONTACT</span>
+            <span class="navItemName" data-lang="it">CONTATTO</span>
+            <span class="navItemName" data-lang="en">CONTACT</span>
           </a>
         </li>
       </ul>
@@ -97,13 +107,23 @@
           <img src="assets/me/Luca-profile-pic.jpg" alt="A picture of Luca Mancusi.">
         </div>
         <div class="heroDescription">
-          <p class="greeting">HI THERE! I'M</p>
+          <p class="greeting" data-lang="en">HI THERE! I'M</p>
+          <p class="greeting" data-lang="it">CIAO! IO SONO</p>
           <h1><span>Luca</span> Mancusi</h1>
-          <p class="smallBio">
-            <span>Full-stack developer</span> with a strong background in C# and .NET technologies,
-            currently expanding into modern front-end development with Angular and TypeScript.
+          <p class="smallBio" data-lang="en">
+            <span data-lang="en">Full-stack developer</span> with a strong background in C# and .NET technologies,
+            currently expanding into modern front-end development with Angular and TypeScript and I am deepening my
+            knowledge in Javascript and Nodejs.
             Passionate about building intuitive, interactive user experiences for both web and desktop applications.
           </p>
+
+          <p class="smallBio" data-lang="it">
+            <span data-lang="it">Sviluppatore full-stack</span> con solida esperienza in C# e tecnologie .NET,
+            attualmente mi sto specializzando nello sviluppo front-end moderno con Angular e TypeScript e sto
+            approfondendo le mie conoscenze in Javascript e Nodejs.
+            Appassionato nel creare esperienze utente intuitive e interattive sia per applicazioni web che desktop.
+          </p>
+
           <div class="socialsResume">
             <a class="resumeLink" href="assets/cv/Curriculum Luca 2025.pdf" alt="Luca Mancusi download" target="_blank"
               rel="noopener noreferrer">Download CV <i class="lni lni-download-1"></i></a>
@@ -133,12 +153,30 @@
       <main>
         <!-- About Section -->
         <section class="aboutSection" id="about">
-          <div class="sectionHead">
+          <div class="sectionHead" data-lang="en">
             <span>SOME INFO</span>
             <h2>ABOUT ME</h2>
           </div>
 
-          <article class="aboutContainer sectionContainer">
+          <div class="sectionHead" data-lang="it">
+            <span>ALCUNE INFO</span>
+            <h2>SU DI ME</h2>
+          </div>
+
+          <article class="aboutContainer sectionContainer" data-lang="it">
+            <p><span>Sono un laureato in Ingegneria Informatica</span> e attualmente lavoro come <span>Sviluppatore
+                Full-Stack</span>.
+              Ho una solida esperienza in C# e tecnologie .NET e sono appassionato nella creazione di applicazioni sia
+              web sia desktop.
+              Nel mio tempo libero approfondisco lo sviluppo front-end moderno con Angular, TypeScript e Blazor, oltre
+              al back-end con Node.js.
+              Amo costruire soluzioni pulite ed efficienti utilizzando pattern come MVVM e tecnologie come WPF e SQL.
+              Sono sempre desideroso di imparare, risolvere problemi complessi tramite codice e collaborare con altri
+              sviluppatori appassionati.
+            </p>
+          </article>
+
+          <article class="aboutContainer sectionContainer" data-lang="en">
             <p>I'm a <span>Computer Engineering</span> graduate and currently working as a <span>Full-Stack
                 Developer.</span>
               I have a strong background in C# and .NET technologies, and I’m passionate about creating both web and
@@ -149,12 +187,14 @@
               I'm always eager to learn, solve complex problems through code, and collaborate with other passionate
               developers.</p>
           </article>
+
         </section>
 
         <!-- Skills Section -->
         <section class="skillsSection" id="skills">
           <div class="sectionHead">
-            <span>CHECK OUT MY</span>
+            <span data-lang="en">CHECK OUT MY</span>
+            <span data-lang="it">GUARDA LE MIE</span>
             <h2>SKILLS</h2>
           </div>
 
@@ -250,14 +290,19 @@
 
         <!-- JOURNEY SECTION -->
         <section id="projects" class="timeline-section">
-          <div class="sectionHead">
+          <div class="sectionHead" data-lang="en">
             <span>MY WORK</span>
             <h2>HISTORY</h2>
           </div>
 
+          <div class="sectionHead" data-lang="it">
+            <span>LE MIE ESPERIENZE</span>
+            <h2>LAVORATIVE</h2>
+          </div>
+
           <div class="timeline-container">
             <!-- Timeline item sinistra -->
-            <div class="timeline-item left" data-aos="fade-right">
+            <div class="timeline-item left" data-aos="fade-right" data-lang="en">
               <div class="content">
                 <h3>2021-now</h3>
                 <h4>Full-Stack Developer</h4>
@@ -268,8 +313,20 @@
               </div>
             </div>
 
+            <div class="timeline-item left" data-aos="fade-right" data-lang="it">
+              <div class="content">
+                <h3>2021-ora</h3>
+                <h4>Sviluppatore Full-Stack</h4>
+                <h5>Spindox</h5>
+                <p>Progettazione e sviluppo di applicazioni web full-stack, utilizzando C# e ASP.NET Core per il
+                  back-end.
+                  Il front-end utilizza Angular e TypeScript, mentre SQL Server viene utilizzato per la persistenza dei
+                  dati e l'implementazione dell'API REST.</p>
+              </div>
+            </div>
+
             <!-- Timeline item destra -->
-            <div class="timeline-item right" data-aos="fade-left">
+            <div class="timeline-item right" data-aos="fade-left" data-lang="en">
               <div class="content">
                 <h3>2019-2023</h3>
                 <h4>Graphic Designer</h4>
@@ -280,6 +337,18 @@
               </div>
             </div>
 
+            <div class="timeline-item right" data-aos="fade-left" data-lang="it">
+              <div class="content">
+                <h3>2019-2023</h3>
+                <h4>Progettista grafico</h4>
+                <h5>Gruppo Manniello Hotels</h5>
+                <p>Creazione di materiali di comunicazione visiva per il marchio, tra cui brochure, banner web, loghi e
+                  visuals
+                  per le campagne di marketing, ottimizzando l'esperienza dell'utente e garantendo la coerenza grafica.
+                </p>
+              </div>
+            </div>
+
             <!-- Aggiungi altri items alternati left/right -->
           </div>
         </section>
@@ -287,20 +356,48 @@
 
         <!-- Works Section -->
         <section class="worksSection" id="works">
-          <div class="sectionHead">
+          <div class="sectionHead" data-lang="en">
             <span>TAKE A LOOK AT MY</span>
             <h2>PROJECTS</h2>
           </div>
 
+          <div class="sectionHead" data-lang="it">
+            <span>DAI UNO SGUARDO AI</span>
+            <h2>MIEI PROGETTI</h2>
+          </div>
+
+          <!-- Cinema -->
           <div class="worksContainer sectionContainer">
-            <article class="workBox">
+            <article class="workBox" data-lang="it">
+              <div class="workImageContainer">
+                <img src="assets/projects/teatro-delle-rose.png" alt="teatro-delle-rose.png">
+              </div>
+              <div class="workDescribeContainer">
+                <h3>Cinema Teatro delle Rose</h3>
+                <h4>Tecnologie usate: <span class="techStack">Wordpress</span>, <span class="techStack">PHP</span>,
+                  <span class="techStack">Javascript</span>
+                </h4>
+                <ul>
+                  <li>Tema WordPress dinamico e personalizzato con calendario.</li>
+                  <li>Completamente responsive per tutti i dispositivi.</li>
+                  <li>Ottimizzato per SEO e prestazioni.</li>
+                </ul>
+                <div class="workLinks">
+                  <a href="https://www.teatrodellerose.com/" class="liveLink" target="_blank"
+                    rel="noopener noreferrer">Vai al sito</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="workBox" data-lang="en">
               <div class="workImageContainer">
                 <img src="assets/projects/teatro-delle-rose.png" alt="teatro-delle-rose.png">
               </div>
               <div class="workDescribeContainer">
                 <h3>Cinema Teatro delle Rose</h3>
                 <h4>Technologies Used: <span class="techStack">Wordpress</span>, <span class="techStack">PHP</span>,
-                  <span class="techStack">Javascript</span></h4>
+                  <span class="techStack">Javascript</span>
+                </h4>
                 <ul>
                   <li>Custom WordPress theme featuring a dynamic show calendar.</li>
                   <li>Fully responsive for all devices.</li>
@@ -312,14 +409,38 @@
                 </div>
               </div>
             </article>
-            <article class="workBox">
+
+            <!-- La rinascita-di-venere -->
+            <article class="workBox" data-lang="it">
+              <div class="workImageContainer">
+                <img src="assets/projects/la-rinascita-di-venere.png" alt="la-rinascita-di-venere.png">
+              </div>
+              <div class="workDescribeContainer">
+                <h3>La Rinascita di Venere</h3>
+                <h4>Tecnologie usate: <span class="techStack">Wordpress</span>, <span class="techStack">PHP</span>,
+                  <span class="techStack">Javascript</span>
+                </h4>
+                <ul>
+                  <li>Gallerie multimediali interattive.</li>
+                  <li>Moduli integrati per contatti e newsletter.</li>
+                  <li>Ottimizzato per SEO e caricamento rapido.</li>
+                </ul>
+                <div class="workLinks">
+                  <a href="https://larinascitadivenere.it/" class="liveLink" target="_blank"
+                    rel="noopener noreferrer">Vai al sito</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="workBox" data-lang="en">
               <div class="workImageContainer">
                 <img src="assets/projects/la-rinascita-di-venere.png" alt="la-rinascita-di-venere.png">
               </div>
               <div class="workDescribeContainer">
                 <h3>La Rinascita di Venere</h3>
                 <h4>Technologies Used: <span class="techStack">Wordpress</span>, <span class="techStack">PHP</span>,
-                  <span class="techStack">Javascript</span></h4>
+                  <span class="techStack">Javascript</span>
+                </h4>
                 <ul>
                   <li>Interactive multimedia galleries</li>
                   <li>Built-in contact and newsletter forms.</li>
@@ -331,7 +452,28 @@
                 </div>
               </div>
             </article>
-            <article class="workBox">
+
+            <!-- Fitness Center -->
+            <article class="workBox" data-lang="it">
+              <div class="workImageContainer">
+                <img src="assets/projects/FitnessCenter.png" alt="Fitness Center.">
+              </div>
+              <div class="workDescribeContainer">
+                <h3>Gestionale di un centro fitness</h3>
+                <h4>Tecnologie usate: <span class="techStack">C#</span>, <span class="techStack">SQL</span></h4>
+                <ul>
+                  <li>Ideale per la creazione di schede clienti, fitness e dieta.</li>
+                  <li>Calendario per la prenotazione degli appuntamenti.</li>
+                  <li>Possibilità di aggiungere plug-in per sviluppi futuri.</li>
+                </ul>
+                <div class="workLinks">
+                  <a href="assets/projects/Fitness-Center-UI.pdf" alt="Fitness Center UI" target="_blank"
+                    rel="noopener noreferrer">Anteprima Interfaccia</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="workBox" data-lang="en">
               <div class="workImageContainer">
                 <img src="assets/projects/FitnessCenter.png" alt="Fitness Center.">
               </div>
@@ -345,11 +487,10 @@
                 </ul>
                 <div class="workLinks">
                   <a href="assets/projects/Fitness-Center-UI.pdf" alt="Fitness Center UI" target="_blank"
-                    rel="noopener noreferrer">Check UI</a>
+                    rel="noopener noreferrer">Preview Interface</a>
                 </div>
               </div>
             </article>
-
 
 
 
@@ -361,53 +502,91 @@
 
         <!-- Contact Section -->
         <section class="contactSection" id="contact">
-          <div class="sectionHead">
+          <div class="sectionHead" data-lang="en">
             <span>SAY HELLO</span>
             <h2>CONTACT</h2>
           </div>
-
-          <div class="contactContainer sectionContainer">
+        
+          <div class="contactContainer sectionContainer" data-lang="en">
             <!-- <h3>Get in Touch</h3>
-            <div class="contactTypes">
-              <div class="flexContainer">
-                <div class="typeBox">
-                  <i class="lni lni-envelope"></i>
-                  <a href="mailto:lucamancusi91@gmail.com">lucamancusi91@gmail.com</a>
-                  <p>Email Me</p>
-                </div>
-              </div> -->
+                    <div class="contactTypes">
+                      <div class="flexContainer">
+                        <div class="typeBox">
+                          <i class="lni lni-envelope"></i>
+                          <a href="mailto:lucamancusi91@gmail.com">lucamancusi91@gmail.com</a>
+                          <p>Email Me</p>
+                        </div>
+                      </div> -->
             <!-- <div class="flexContainer">
-                <div class="typeBox">
-                  <i class="lni lni-calendar"></i>
-                  <a href="https://calendly.com/arupmandal731/15min" target="_blank" rel="noopener noreferrer">Calendly</a>
-                  <p>Schedule a Meeting</p>
-                </div>
-              </div> -->
-
+                        <div class="typeBox">
+                          <i class="lni lni-calendar"></i>
+                          <a href="https://calendly.com/arupmandal731/15min" target="_blank" rel="noopener noreferrer">Calendly</a>
+                          <p>Schedule a Meeting</p>
+                        </div>
+                      </div> -->
+        
             <div class="contactFormContainer">
               <h3>Contact Form</h3>
               <form id="contactForm" action="https://formspree.io/f/mdkzbyov" method="POST">
                 <label for="nameInput" class="srOnly"></label>
-                <input type="text" id="nameInput" name="nameInput" class="nameInput" required
-                  placeholder="Your Name*" />
+                <input type="text" id="nameInput" name="nameInput" class="nameInput" required placeholder="Your Name*" />
                 <label for="emailInput" class="srOnly"></label>
-                <input type="email" id="emailInput" name="emailInput" class="emailInput" required
-                  placeholder="Your Email*" />
+                <input type="email" id="emailInput" name="emailInput" class="emailInput" required placeholder="Your Email*" />
                 <label for="subjectInput" class="srOnly"></label>
-                <input type="text" id="subjectInput" name="subjectInput" class="subjectInput" required
-                  placeholder="Subject*" />
+                <input type="text" id="subjectInput" name="subjectInput" class="subjectInput" required placeholder="Subject*" />
                 <label for="messageInput" class="srOnly"></label>
                 <textarea class="messageInput" name="messageInput" id="messageInput" required
                   placeholder="Your Message*"></textarea>
               </form>
-
-              <button type="submit" class="formSend" target="_blank" form="contactForm"
-                rel="noopener noreferrer">SEND</button>
+        
+              <button type="submit" class="formSend" target="_blank" form="contactForm" rel="noopener noreferrer">SEND</button>
             </div>
           </div>
+
+          <div class="sectionHead" data-lang="it">
+            <span>RESTIAMO IN</span>
+            <h2>CONTATTO</h2>
+          </div>
+        
+          <div class="contactContainer sectionContainer" data-lang="it">
+            <!-- <h3>Get in Touch</h3>
+                    <div class="contactTypes">
+                      <div class="flexContainer">
+                        <div class="typeBox">
+                          <i class="lni lni-envelope"></i>
+                          <a href="mailto:lucamancusi91@gmail.com">lucamancusi91@gmail.com</a>
+                          <p>Email Me</p>
+                        </div>
+                      </div> -->
+            <!-- <div class="flexContainer">
+                        <div class="typeBox">
+                          <i class="lni lni-calendar"></i>
+                          <a href="https://calendly.com/arupmandal731/15min" target="_blank" rel="noopener noreferrer">Calendly</a>
+                          <p>Schedule a Meeting</p>
+                        </div>
+                      </div> -->
+        
+            <div class="contactFormContainer">
+              <h3>Form di Contatto</h3>
+              <form id="contactForm" action="https://formspree.io/f/mdkzbyov" method="POST">
+                <label for="nameInput" class="srOnly"></label>
+                <input type="text" id="nameInput" name="nameInput" class="nameInput" required placeholder="Nome e Cognome*" />
+                <label for="emailInput" class="srOnly"></label>
+                <input type="email" id="emailInput" name="emailInput" class="emailInput" required placeholder="Email*" />
+                <label for="subjectInput" class="srOnly"></label>
+                <input type="text" id="subjectInput" name="subjectInput" class="subjectInput" required placeholder="Oggetto*" />
+                <label for="messageInput" class="srOnly"></label>
+                <textarea class="messageInput" name="messageInput" id="messageInput" required
+                  placeholder="Messaggio*"></textarea>
+              </form>
+        
+              <button type="submit" class="formSend" target="_blank" form="contactForm" rel="noopener noreferrer">INVIA</button>
+            </div>
+          </div>
+        </section>
     </div>
 
-    </section>
+    
     </main> <!-- End of Main -->
   </div>
   <!-- Footer -->

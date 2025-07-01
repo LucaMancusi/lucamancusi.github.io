@@ -75,3 +75,28 @@ index.init = function() {
 $(function() {
   index.init();
 })
+
+
+function initLanguageToggle() {
+  const btnIt = document.getElementById('btn-it');
+  const btnEn = document.getElementById('btn-en');
+  const elements = document.querySelectorAll('[data-lang]');
+
+  function setLang(lang) {
+    elements.forEach(el => {
+      el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+    });
+    btnIt.classList.toggle('active', lang === 'it');
+    btnEn.classList.toggle('active', lang === 'en');
+  }
+
+  btnIt.addEventListener('click', () => setLang('it'));
+  btnEn.addEventListener('click', () => setLang('en'));
+
+  // Set default language
+  setLang('it');
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initLanguageToggle);
+

@@ -1247,3 +1247,31 @@ footer p {
     left: 0;
   }
 }
+
+.lang-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition-duration: .3s;
+}
+.lang-switch button {
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #0d1b2a;
+  transition-duration: .3s;
+}
+.lang-switch button.active {
+  background: #0d1b2a;
+  color: #fff;
+  transition-duration: .3s;
+}
+
+
+
