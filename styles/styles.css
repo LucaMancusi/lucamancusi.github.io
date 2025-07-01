@@ -313,48 +313,6 @@ section {
   color: #0d1b2a;
 }
 
-.menuButton {
-  cursor: pointer;
-  position: fixed;
-  height: 30px;
-  width: 35px;
-  padding: 10px;
-  top: 35px;
-  right: 25px;
-  z-index: 20;
-  display: none;
-}
-
-.menuButton:focus {
-  border: 2px solid #0d1b2a;
-}
-
-.menuButton .linesContainer {
-  position: relative;
-}
-
-.menuButton .linesContainer span, .menuButton .linesContainer span:before, .menuButton .linesContainer span:after {
-  border-radius: 5px;
-  width: 25px;
-  height: 2px;
-  background-color: black;
-  position: absolute;
-  display: block;
-  content: '';
-}
-
-.menuButton .linesContainer span {
-  top: 3px;
-  left: -6px;
-}
-
-.menuButton .linesContainer span:before {
-  top: -10px;
-}
-
-.menuButton .linesContainer span:after {
-  bottom: -10px;
-}
 
 .sideMenu {
   display: -webkit-box;
@@ -994,9 +952,6 @@ footer p {
   .sideMenu nav {
     margin-top: 40px;
   }
-  .menuButton {
-    display: block;
-  }
   header {
     display: block;
     padding: 80px 0;
@@ -1246,12 +1201,110 @@ footer p {
   .timeline-item::before {
     left: 0;
   }
+
+  /* Nasconde il testo */
+  .resumeLink_text {
+    display: none;
+  }
+
+  
+  /* Override specifico per header/socialsResume */
+  header .heroDescription .socialsResume .resumeLink {
+    display: flex !important;            /* diventa flex container */
+    align-items: center !important;      /* centra verticalmente */
+    justify-content: center !important;  /* centra orizzontalmente */
+    width: 63px !important;              /* fisso come le icone */
+    height: 43px !important;             /* fisso come le icone */
+    padding: 0 !important;               /* rimuove padding extra */
+  }
+
+  /* Assicura che l’icona riempia bene il contenitore */
+  header .heroDescription .socialsResume .resumeLink i {
+    font-size: 1.2rem !important;
+    display: flex !important;            /* diventa flex container */
+    align-items: center !important;      /* centra verticalmente */
+    justify-content: center !important;  /* centra orizzontalmente */
+  }
+
 }
+
+
+
+.button-container {
+  display: flex;
+  background: #0d1b2a;
+  width: 250px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 20px;
+}
+
+/* Nascondi tutto ciò che è mobile-only su desktop */
+.mobile-only {
+  display: none;
+}
+/* Nascondi tutto ciò che è desktop-only su mobile */
+.desktop-only {
+  display: block;
+}
+
+/* MEDIA QUERY per mobile (max-width 768px) */
+@media (max-width: 768px) {
+  /* Mostra la button-container mobile */
+  .mobile-only {
+    display: flex;
+    position: fixed;
+    top: .3%;
+    left: 10%;
+    width: 80%;
+    height: 50px;
+    background: #0d1b2a;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  /* Spazio per non far coprire il contenuto */
+  body {
+    padding-top: 50px;
+  }
+  /* Nascondi il toggle desktop su mobile */
+  .desktop-only {
+    display: none;
+  }
+}
+
 
 .lang-switch {
   position: absolute;
   top: 20px;
-  right: 20px;
+  left: 50%;
   background: rgba(255,255,255,0.8);
   border-radius: 20px;
   overflow: hidden;
@@ -1272,6 +1325,24 @@ footer p {
   color: #fff;
   transition-duration: .3s;
 }
+
+/* ===== Hide sideMenu on mobile ===== */
+@media (max-width: 990px) {
+  /* Nasconde il menu laterale e disabilita l’animazione */
+  .sideMenu {
+    display: none !important;
+    left: -300px !important;
+    transition: none !important;
+  }
+
+  .outerWrapper {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+}
+
+
 
 
 

@@ -80,6 +80,10 @@ $(function() {
 function initLanguageToggle() {
   const btnIt = document.getElementById('btn-it');
   const btnEn = document.getElementById('btn-en');
+
+  const btnItMobile = document.getElementById('btn-it-mobile');
+  const btnEnMobile = document.getElementById('btn-en-mobile');
+
   const elements = document.querySelectorAll('[data-lang]');
 
   function setLang(lang) {
@@ -88,10 +92,14 @@ function initLanguageToggle() {
     });
     btnIt.classList.toggle('active', lang === 'it');
     btnEn.classList.toggle('active', lang === 'en');
+
   }
 
   btnIt.addEventListener('click', () => setLang('it'));
   btnEn.addEventListener('click', () => setLang('en'));
+
+  btnItMobile.addEventListener('click', () => setLang('it'));
+  btnEnMobile.addEventListener('click', () => setLang('en'));
 
   // Set default language
   setLang('it');

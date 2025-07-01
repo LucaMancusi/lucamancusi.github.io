@@ -23,27 +23,58 @@
 
   <meta name="google-site-verification" content="1KKToW3rMsJ7faao4EmKmBZC1pPF5o63NQyIQNhJXg0" />
 
-  <div class="lang-switch">
-    <button id="btn-it" class="active">IT</button>
-    <button id="btn-en">EN</button>
-  </div>
 
 </head>
 
 
 <body>
 
-
-
-
-  <!-- Mobile menu button -->
-
-  <div id="home" class="visuallyHidden"></div>
-  <div class="menuButton" id="menuButton" tabindex=0>
-    <div class="linesContainer">
-      <span></span>
-    </div>
+  <div class="lang-switch desktop-only">
+    <button id="btn-it" class="active">IT</button>
+    <button id="btn-en">EN</button>
   </div>
+  
+
+  <div class="button-container mobile-only">
+      <button class="button">
+        <a href="#home" class="navItem">
+        <i class="lni lni-home-2"></i>
+        </a>
+      </button>
+
+      <button class="button">
+        <a href="#about" class="navItem">
+            <i class="lni lni-user-4"></i></a>
+      </button>
+
+      <button class="button">
+        <a href="#skills" class="navItem">
+            <i class="lni lni-code-1"></i>
+          </a>
+      </button>
+
+      <button class="button">
+        <a href="#projects" class="navItem">
+            <i class="lni lni-briefcase-2"></i>
+          </a>
+      </button>
+
+      <button class="button">
+        <a href="#contact" class="navItem">
+            <i class="lni lni-phone"></i>
+          </a>
+      </button>
+
+    
+    <button class="button" id="btn-it-mobile">IT</button>
+    <button class="button" id="btn-en-mobile">EN</button>
+  </div>
+
+  </div>
+
+    </div>
+
+
   <!-- Side menu -->
   <aside class="sideMenu sideMenuShow" id="sideMenu">
     <p class="logo">LM</p>
@@ -57,7 +88,7 @@
         </li>
         <li class="aboutNav">
           <a href="#about" class="navItem">
-            <i class="lni lni-user"></i>
+            <i class="lni lni-user-4"></i>
             <span class="navItemName" data-lang="en">ABOUT</span>
             <span class="navItemName" data-lang="it">SU DI ME</span>
           </a>
@@ -99,7 +130,7 @@
   </aside>
 
   <!--Beginning of the wrapper -->
-  <div class="outerWrapper">
+  <div class="outerWrapper" id="home">
     <div class="innerWrapper">
       <!-- Header -->
       <header>
@@ -115,21 +146,25 @@
             currently expanding into modern front-end development with Angular and TypeScript and I am deepening my
             knowledge in Javascript and Nodejs.
             Passionate about building intuitive, interactive user experiences for both web and desktop applications.
-          </p>
-
-          <p class="smallBio" data-lang="it">
-            <span data-lang="it">Sviluppatore full-stack</span> con solida esperienza in C# e tecnologie .NET,
-            attualmente mi sto specializzando nello sviluppo front-end moderno con Angular e TypeScript e sto
-            approfondendo le mie conoscenze in Javascript e Nodejs.
-            Appassionato nel creare esperienze utente intuitive e interattive sia per applicazioni web che desktop.
-          </p>
-
-          <div class="socialsResume">
-            <a class="resumeLink" href="assets/cv/Curriculum Luca 2025.pdf" alt="Luca Mancusi download" target="_blank"
-              rel="noopener noreferrer">Download CV <i class="lni lni-download-1"></i></a>
-            <ul class="socialsList">
-              <li>
-                <a href="https://www.linkedin.com/in/luca-mancusi-6208b6270/" target="_blank"
+            </p>
+            
+            <p class="smallBio" data-lang="it">
+              <span data-lang="it">Sviluppatore full-stack</span> con solida esperienza in C# e tecnologie .NET,
+              attualmente mi sto specializzando nello sviluppo front-end moderno con Angular e TypeScript e sto
+              approfondendo le mie conoscenze in Javascript e Nodejs.
+              Appassionato nel creare esperienze utente intuitive e interattive sia per applicazioni web che desktop.
+              </p>
+              
+              <div class="socialsResume">
+                <a class="resumeLink" href="assets/cv/Curriculum%20Luca%202025.pdf" target="_blank" rel="noopener noreferrer">
+                  <span class="resumeLink_text">Curriculum</span>
+                  <i class="lni lni-download-1"></i>
+                </a>
+              
+              
+                <ul class="socialsList">
+                  <li>
+                    <a href="https://www.linkedin.com/in/luca-mancusi-6208b6270/" target="_blank"
                   rel="noopener noreferrer"><i class="lni lni-linkedin"
                     aria-label="Link to Luca's LinkedIn page."></i></a>
               </li>
