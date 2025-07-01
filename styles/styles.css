@@ -531,7 +531,7 @@ header .heroDescription .socialsResume .resumeLink:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 50px;
+  margin-left: 0px;
 }
 
 .socialsList li {
@@ -1053,9 +1053,7 @@ footer p {
   header {
     padding: 40px 0;
   }
-  header .heroDescription .socialsResume {
-    display: block;
-  }
+  
   header .heroImageContainer img {
     -webkit-box-shadow: 12px 0 #d9c8f1;
             box-shadow: 12px 0 #d9c8f1;
@@ -1079,6 +1077,7 @@ footer p {
   'GRAD' 0,
   'opsz' 24
 }
+
 }
 /* ===== Timeline Projects ===== */
 .timeline-section {
@@ -1226,6 +1225,9 @@ footer p {
     justify-content: center !important;  /* centra orizzontalmente */
   }
 
+
+
+
 }
 
 
@@ -1343,6 +1345,14 @@ footer p {
 }
 
 
+@media (max-width: 400px) {
+  header .heroDescription .socialsResume {
+    display: flex !important;        /* mantieni il flex */
+    align-items: center !important;  /* allinea verticalmente */
+    justify-content: center !important; /* centra orizzontalmente */
+    gap: 0.5rem;                     /* un po’ di spazio fra i bottoni */
+  }
+}
 
 
 
