@@ -1355,4 +1355,6 @@ footer p {
 }
 
 
-
+.timeline-p {
+  font-size: 16px !important;
+}
