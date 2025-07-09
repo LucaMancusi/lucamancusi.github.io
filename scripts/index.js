@@ -108,3 +108,65 @@ function initLanguageToggle() {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', initLanguageToggle);
 
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.getElementById('theme-toggle');
+  const whiteModeHref = 'styles/styles-white-mode.css';
+  const darkModeHref = 'styles/styles-dark-mode.css';
+  const themeKey = 'theme-mode';
+
+  function setTheme(mode) {
+    let link = document.querySelector('link[href*="styles/styles-"][rel="stylesheet"]');
+    if (!link) return;
+    if (mode === 'dark') {
+      link.href = darkModeHref;
+      toggle.checked = true;
+    } else {
+      link.href = whiteModeHref;
+      toggle.checked = false;
+    }
+    localStorage.setItem(themeKey, mode);
+  }
+
+  // On load, set theme from localStorage
+  const saved = localStorage.getItem(themeKey);
+  if (saved === 'dark') setTheme('dark');
+  else setTheme('white');
+
+  toggle.addEventListener('change', function() {
+    setTheme(this.checked ? 'dark' : 'white');
+  });
+});
+
+
+function initMobileThemeToggle() {
+  const switchOnOffMobile = document.getElementById('switch-on-off-mobile');
+  const whiteModeHref = 'styles/styles-white-mode.css';
+  const darkModeHref = 'styles/styles-dark-mode.css';
+  const themeKey = 'theme-mode';
+
+  function setTheme(mode) {
+    let link = document.querySelector('link[href*="styles/styles-"][rel="stylesheet"]');
+    if (!link) return;
+    if (mode === 'dark') {
+      link.href = darkModeHref;
+      switchOnOffMobile.classList.remove('lni-moon-half-right-5');
+      switchOnOffMobile.classList.add('lni-sun-1');
+    } else {
+      link.href = whiteModeHref;
+      switchOnOffMobile.classList.remove('lni-sun-1');
+      switchOnOffMobile.classList.add('lni-moon-half-right-5');
+    }
+    localStorage.setItem(themeKey, mode);
+  }
+
+  // On load, set theme from localStorage
+  const saved = localStorage.getItem(themeKey);
+  if (saved === 'dark') setTheme('dark');
+  else setTheme('white');
+
+  switchOnOffMobile.addEventListener('click', function() {
+    setTheme(switchOnOffMobile.classList.contains('lni-moon-half-right-5') ? 'dark' : 'white');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initMobileThemeToggle);
