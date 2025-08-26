@@ -170,3 +170,50 @@ function initMobileThemeToggle() {
 }
 
 document.addEventListener('DOMContentLoaded', initMobileThemeToggle);
+
+
+
+
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    palette: {
+      popup: { background: "#0f172a" },
+      button: { background: "#38bdf8", text: "#0f172a" }
+    },
+    theme: "classic",
+    position: "bottom",
+    type: "opt-in", // Importante: consenso preventivo
+    content: {
+      message: "Questo sito utilizza Google Analytics per migliorare l'esperienza utente.",
+      dismiss: "Rifiuta",
+      allow: "Accetta",
+      link: "Leggi di più",
+      href: "/privacy.html" // crea una pagina privacy semplice
+    },
+    onInitialise: function (status) {
+      if (status == cookieconsent.status.allow) enableGA();
+    },
+    onStatusChange: function(status) {
+      if (status == cookieconsent.status.allow) enableGA();
+    }
+  });
+});
+
+// Funzione che carica Google Analytics solo se l’utente accetta
+function enableGA() {
+  if (window.gaEnabled) return; // evita doppi caricamenti
+  window.gaEnabled = true;
+
+  var gtagScript = document.createElement('script');
+  gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-0Q6LEDVLND";
+  gtagScript.async = true;
+  document.head.appendChild(gtagScript);
+
+  gtagScript.onload = function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-0Q6LEDVLND');
+  };
+}

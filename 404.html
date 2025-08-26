@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina non trovata</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #0f172a; /* sfondo scuro come il tuo sito */
+      color: #f1f5f9;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 4rem;
+      margin: 0 0 10px 0;
+      color: #38bdf8; /* azzurro evidenza */
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background-color: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+    a:hover {
+      background-color: #0ea5e9;
+    }
+    .lang {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .lang button {
+      margin: 0 5px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #1e293b;
+      color: #f1f5f9;
+      transition: background-color 0.2s ease;
+    }
+    .lang button:hover {
+      background-color: #334155;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>404</h1>
+    <p id="msg-it">Ops! La pagina che cerchi non esiste.<br>Probabilmente il link è sbagliato.</p>
+    <p id="msg-en" style="display:none;">Oops! The page you’re looking for doesn’t exist.<br>The link might be incorrect.</p>
+    <a href="/" id="home-it">Torna alla Home</a>
+    <a href="/" id="home-en" style="display:none;">Back to Home</a>
+
+    <div class="lang">
+      <span>Lingua / Language:</span>
+      <button onclick="switchLang('it')">IT</button>
+      <button onclick="switchLang('en')">EN</button>
+    </div>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      if (lang === 'it') {
+        document.getElementById('msg-it').style.display = 'block';
+        document.getElementById('msg-en').style.display = 'none';
+        document.getElementById('home-it').style.display = 'inline-block';
+        document.getElementById('home-en').style.display = 'none';
+      } else {
+        document.getElementById('msg-it').style.display = 'none';
+        document.getElementById('msg-en').style.display = 'block';
+        document.getElementById('home-it').style.display = 'none';
+        document.getElementById('home-en').style.display = 'inline-block';
+      }
+    }
+  </script>
+</body>
+</html>
